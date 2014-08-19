@@ -18,7 +18,7 @@
     <div class="wrapper">
       <header>
         <h1>Bows</h1>
-        <p>Safe, production happy, colourful logging for chrome - makes reading your logs much easier.</p>
+        <p>Safe, production happy, colourful logging for chrome, opera, and firefox - makes reading your logs much easier.</p>
         <p class="view"><a href="https://github.com/latentflip/bows">View the Project on GitHub <small>latentflip/bows</small></a></p>
         <ul>
           <li><a href="https://github.com/latentflip/bows/zipball/master">Download <strong>ZIP File</strong></a></li>
@@ -27,7 +27,11 @@
         </ul>
       </header>
       <section>
-        <p><img src="https://raw.github.com/latentflip/bows/master/example/cols.png" alt="Colors"></p>
+        <h1>
+<a name="bows" class="anchor" href="#bows"><span class="octicon octicon-link"></span></a>Bows</h1>
+
+<p><img src="https://raw.github.com/latentflip/bows/master/example/cols.png" alt="Colors">
+Safe, production happy, colourful logging - makes reading your logs <em>much</em> easier.</p>
 
 <p>(Rain)bows makes logging debug messages in your apps much nicer.</p>
 
@@ -49,6 +53,20 @@
 <p>If you aren't using browserify, download either <a href="https://raw.github.com/latentflip/bows/master/dist/bows.js">bows.js</a> or <a href="https://raw.github.com/latentflip/bows/master/dist/bows.min.js">bows.min.js</a>.</p>
 
 <h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Easily create prefixes for your logs, so that you can distinguish between logs from different parts of your app easily.</li>
+<li>If supported, prefixes will be color coded for even easier identification.</li>
+<li>Can be safely used in production, as logs will be disabled for your users, but can be enabled by you with a local storage flag.</li>
+<li>Greppable logs by setting <code>localStorage.debug = /Foo/</code> to only display logs for modules matching the regex to help you focus in development.</li>
+</ul><h1>
+<a name="browser-support" class="anchor" href="#browser-support"><span class="octicon octicon-link"></span></a>Browser Support</h1>
+
+<ul>
+<li>Works in all reasonable browsers</li>
+<li>Supports colors in chrome, opera, firefox &gt;= 31.0</li>
+</ul><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <ul>
@@ -97,11 +115,35 @@
 <p><img src="https://raw.github.com/latentflip/bows/master/example/example.png" alt="Example Output"></p>
 
 <h2>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+<a name="test" class="anchor" href="#test"><span class="octicon octicon-link"></span></a>Test</h2>
+
+<p><strong>Status:</strong> <a href="https://travis-ci.org/latentflip/bows"><img src="https://travis-ci.org/latentflip/bows.svg?branch=master" alt="Build Status"></a></p>
+
+<p>This project uses <code>phantomjs</code> for tests. To run the tests install the development dependencies and then run:</p>
+
+<div class="highlight highlight-bash"><pre>npm <span class="nb">test</span>
+</pre></div>
+
+<h3>
+<a name="new-tests" class="anchor" href="#new-tests"><span class="octicon octicon-link"></span></a>New tests</h3>
+
+<p>Add a file in <code>test</code>, refer to enabled.html/disabled.html, then add the script to the array in test/index.js.</p>
+
+<h2>
+<a name="license--credits" class="anchor" href="#license--credits"><span class="octicon octicon-link"></span></a>License &amp; Credits</h2>
 
 <p>MIT</p>
 
-<p>Copyright Philip Roberts <a href="http://latentflip.com">latentflip.com</a></p>
+<p>Copyright <a href="http://twitter.com/philip_roberts">@philip_roberts</a> / <a href="http://latentflip.com">latentflip.com</a>.</p>
+
+<p>With contributions from:</p>
+
+<ul>
+<li>
+<a href="https://twitter.com/lloydwatkin">@lloydwatkin</a>.</li>
+<li>
+<a href="https://twitter.com/camillereynders">@camillereynders</a>.</li>
+</ul><p>Bows depends on <a href="http://github.com/henrikjoreteg/andlog">andlog</a>, a nice little logging module by <a href="https://twitter.com/henrikjoreteg">@HenrikJoreteg</a>.</p>
 
 <h2>
 <a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
@@ -112,7 +154,8 @@
 <span class="nb">cd </span>bows
 npm install <span class="c">#install dependencies</span>
 <span class="c">#edit bows.js</span>
-node build.js <span class="c">#build dist/bows.js and dist/bows.min.js</span>
+npm <span class="nb">test</span>
+npm run build.js <span class="c">#build dist/bows.js and dist/bows.min.js, also done by `npm test`</span>
 </pre></div>
       </section>
     </div>
