@@ -25,8 +25,15 @@
   };
 
   var inNode = typeof window === 'undefined',
-      ls = !inNode && window.localStorage,
-      debugKey = ls.andlogKey || 'debug',
+      ls = true;
+  try {
+    !inNode && window.localStorage;
+  }
+  catch(e) {
+      ls = false;
+  }
+
+  var debugKey = ls.andlogKey || 'debug',
       debug = ls[debugKey],
       logger = require('andlog'),
       bind = Function.prototype.bind,
